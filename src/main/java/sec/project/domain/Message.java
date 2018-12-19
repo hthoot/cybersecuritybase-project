@@ -10,6 +10,7 @@ public class Message {
     private int id;
     private int senderId;
     private String contents;
+    private String senderName;
     
     public Message(int senderId, String contents) {
         this.senderId = senderId;
@@ -39,5 +40,13 @@ public class Message {
     public String getContents() {
         return this.contents;
     }
+    
+    public String getSenderName() {
+        return this.senderName;
+    }
+    public void setSenderName(String senderName) {
+        this.senderName = senderName;
+    }
+    
     
 }

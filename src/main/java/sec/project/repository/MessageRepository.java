@@ -53,15 +53,18 @@ public class MessageRepository {
     }
 
     public List<Message> findAll() throws Exception {
-            PreparedStatement ps = connection.prepareStatement("SELECT id, sender, contents FROM Message");
+            PreparedStatement ps = connection.prepareStatement(
+                    "SELECT m.id, m.sender, m.contents, u.name FROM Message m LEFT JOIN User u ON u.id = m.sender"
+            );
             ResultSet rs = ps.executeQuery();
             
             ArrayList<Message> results = new ArrayList<Message>();
             while(rs.next()) {
                 int id = rs.getInt(1);
                 
-                Message m = new Message(rs.getInt(1), rs.getString(2));
+                Message m = new Message(rs.getInt(2), rs.getString(3));
                 m.setId(id);
+                m.setSenderName(rs.getString(4));
                 
                 results.add(m);
             }

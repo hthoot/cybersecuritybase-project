@@ -6,15 +6,25 @@
     <body>
         <h1>Welcome <span th:text="${uname}"></span>!</h1>
                 
+        <p>Here's what the community has been up to:</p>
+        
         <th:block th:each="message : ${messages}">
             <hr>
                 <p>
-                    <i th:text="${message.contents}"></i>
+                    <i><span th:utext="${message.contents}"></span></i>
                     <br></br>
-                    <b>@<span th:text="${message.sender"></span></b>
+                    <b>@<span th:text="${message.senderName}"></span></b>
                 </p>          
             </hr>
         </th:block>
+
+        <hr></hr>
+        
+        <h2>Say something!</h2>
+        <form action="#" th:action="@{/messages}" method="POST">
+            <p><label for="message">Message</label>: <textarea cols="60" rows="5" name="message" id="message"/></p>
+            <p><input type="submit" value="Submit" /></p>
+        </form>
         
         <p>
             <a href="/logout">Logout</a>

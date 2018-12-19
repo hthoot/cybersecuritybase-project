@@ -6,6 +6,7 @@
 package sec.project.controller;
 
 import javax.servlet.http.HttpSession;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import sec.project.domain.UserInformation;
 import sec.project.repository.UserRepository;
 
+@Controller
 public class UserInfoController {
     private UserRepository userRepository;
     
