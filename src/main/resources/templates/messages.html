@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Litter</title>
+    </head>
+    <body>
+        <h1>Welcome <span th:text="${uname}"></span>!</h1>
+                
+        <th:block th:each="message : ${messages}">
+            <hr>
+                <p>
+                    <i th:text="${message.contents}"></i>
+                    <br></br>
+                    <b>@<span th:text="${message.sender"></span></b>
+                </p>          
+            </hr>
+        </th:block>
+        
+        <p>
+            <a href="/logout">Logout</a>
+            | <a href="/userinfo">Account info</a>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Litter</title>
+    </head>
+    <body>
+        <h1>Welcome <span th:text="${uname}"></span>!</h1>
+
+        <p>Your social security number is <b><span th:text="${ssn}"></span></b>. 
+            As you can see we're taking good care of it.</p>
+        
+        <p>
+            <a href="/logout">Logout</a>
+        </p>
+    </body>
+</html>

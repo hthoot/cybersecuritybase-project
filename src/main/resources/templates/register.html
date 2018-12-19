@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Sign up form</title>
+    </head>
+    <body>
+        <h1>Thank you for your interest towards Litter!</h1>
+
+        <p>We need to ask you for some personal information, but please be informed that your information will be completely safe with us!</p>
+        
+        <form action="#" th:action="@{/register}" method="POST">
+            <p><label for="name">Username</label>: <input type="text" name="uname" id="uname"/></p>
+            <p><label for="ssn">Social Security Number</label>: <input type="text" name="ssn" id="ssn"/></p>
+            <p><label for="password">Password</label>: <input type="password" name="password" id="password"/></p>
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+        
+        
+    </body>
+</html>

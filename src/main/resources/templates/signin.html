@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Oy Corp Ab</title>
+    </head>
+    <body>
+
+        <h1>Welcome to Litter!</h1>
+
+        <p>
+            <b>The future of social media is here!</b> Our advanced technology allows almost 30x longer messages than our competitor. There is no need to settle for 140 characters anymore!
+        </p>
+        
+        <h3>Sign In</h3>
+        
+        <div th:text="${signin_error}"></div>
+        
+        <form action="#" th:action="@{/signin}" method="POST">
+            <p><label for="name">Username</label>: <input type="text" name="uname" id="uname"/></p>
+            <p><label for="password">Password</label>: <input type="password" name="password" id="password"/></p>
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+        
+        <p>
+            Not a member? <a href="/register">Register here!</a>
+        </p>
+    </body>
+</html>
